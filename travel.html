@@ -1,70 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" data-lang="en" data-title-en="Hello World · Amanda Yu" data-title-zh="探索 · 郁立婷">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 这个页面只负责跳转：网址打开时自动转到 helloworld.html -->
+  <meta http-equiv="refresh" content="0; url=helloworld.html">
+  <link rel="canonical" href="helloworld.html">
   <title>Hello World · Amanda Yu</title>
-  <meta name="description" content="Photographs from places Amanda (Liting) Yu has been, orbiting a point-cloud globe.">
-  <script src="lang.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="pages.css">
+  <script>location.replace("helloworld.html" + location.hash);</script>
 </head>
 <body>
-  <a class="skip-link" href="#main"><span data-l="en" lang="en">Skip to content</span><span data-l="zh" lang="zh-CN">跳到正文</span></a>
-
-  <!-- 顶部导航栏（三个页面共用同一段，改的话三个文件都要改） -->
-  <nav class="top-nav" aria-label="Site">
-    <div class="top-nav-inner">
-      <a class="top-nav-name" href="index.html"><span class="full">Amanda Yu</span><span class="short" aria-hidden="true">AY</span></a>
-      <ul>
-        <li class="hide-sm"><a href="index.html#about"><span data-l="en" lang="en">About</span><span data-l="zh" lang="zh-CN">关于</span></a></li>
-        <li><a href="index.html#research"><span data-l="en" lang="en">Research</span><span data-l="zh" lang="zh-CN">研究</span></a></li>
-        <li><a href="index.html#experience"><span data-l="en" lang="en">Experience</span><span data-l="zh" lang="zh-CN">经历</span></a></li>
-        <li><a href="art.html"><span data-l="en" lang="en">Gallery</span><span data-l="zh" lang="zh-CN">画廊</span></a></li>
-        <li><a href="travel.html" aria-current="page"><span data-l="en" lang="en">Hello World</span><span data-l="zh" lang="zh-CN">探索</span></a></li>
-      </ul>
-      <button class="lang-toggle" type="button">中文</button>
-    </div>
-  </nav>
-
-  <!--
-    地球在中间，照片像卫星一样绕着它转
-    照片列表在 travel.js 最上面的 PLACES 里；网页用的是 images/web/travel/ 里压缩过的图
-  -->
-  <main id="main" class="world">
-    <h1 class="sr-only"><span data-l="en" lang="en">Hello, world</span><span data-l="zh" lang="zh-CN">你好，世界</span></h1>
-
-    <div class="world-stage" id="stage">
-      <canvas class="world-globe" id="globe" aria-hidden="true"></canvas>
-      <!-- 照片卫星由 travel.js 生成 -->
-      <!-- 地名：贴在地球上发光的点旁边 -->
-      <div class="pin-label" id="pin-label" aria-hidden="true"><span class="pin-line"></span><span class="pin-text" id="pin-text"></span></div>
-    </div>
-    <p class="sr-only" id="sr-status" aria-live="polite"></p>
-
-    <!-- 手机上：照片按地点排列 -->
-    <div class="world-list" id="world-list"></div>
-  </main>
-
-  <!-- 点开照片后的大图 -->
-  <dialog class="lightbox" id="lightbox" aria-label="Photo">
-    <div class="lightbox-inner">
-      <img id="lb-img" alt="">
-      <div class="lightbox-bar">
-        <button type="button" id="lb-prev"><span data-l="en" lang="en">Previous</span><span data-l="zh" lang="zh-CN">上一张</span></button>
-        <span class="lb-place" id="lb-place"></span>
-        <button type="button" id="lb-next"><span data-l="en" lang="en">Next</span><span data-l="zh" lang="zh-CN">下一张</span></button>
-        <button type="button" id="lb-close"><span data-l="en" lang="en">Close</span><span data-l="zh" lang="zh-CN">关闭</span></button>
-      </div>
-    </div>
-  </dialog>
-
-  <!-- d3 只用来把陆地轮廓画成点阵；topojson 读取陆地数据 -->
-  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
-  <script src="travel.js"></script>
+  <p><a href="helloworld.html">Hello World · Amanda Yu</a></p>
 </body>
 </html>
