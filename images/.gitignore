@@ -1,0 +1,6 @@
+# 原图不上传到 GitHub（太大），网页只用 web/ 里压缩过的图
+/gallery/
+/travel/
+/Art/
+/Life/
+.DS_Store
